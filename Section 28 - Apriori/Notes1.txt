@@ -1,0 +1,3 @@
+It's going to require TWO FOR loops because we're going to loop over all the transactions in the data
+
+set.That's the first loop.And the second loop will be about to loop over all the products in each of the transaction.

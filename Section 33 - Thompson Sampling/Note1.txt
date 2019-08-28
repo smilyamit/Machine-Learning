@@ -1,0 +1,16 @@
+Deterministic systems require instantaneous feedback in order to a apply the system. The inputs and outputs are fully
+ know and can be exactly calculated. This produces a very precises and understandable result in-situ. An example of this
+ is an entrance exam for a college, you know your input (test answers) and you also know your exact output (correct answers
+ / total answers).
+
+
+probabilistic systems do not require instantaneous feed back, becasue the the input is known but the out put is not 
+exactly know, it is a probability. This allows for a very dynamic model that can be used without constant updates. The 
+down side is the accuracy of the model. A good example would be a prediction of a stock market price. This inputs are
+ know (what the stock was yesterday), but the outputs are not exactly know, just a probability.
+
+Notes
+1. Thompson Sampling is impressive!
+One additional pro I can imagine is that it can follow dynamic changes of the distribution. if bandits are changing their 
+behaviour in time (of coure much slower than or draw period) I presume TS should follow the change, while UCB will just 
+stick to a decision which once was right and now is no longer optimal.

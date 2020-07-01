@@ -1,2 +1,4 @@
-#Regularization
+## Regularization in Machine Learning
 It helps in reducing overfitting and variance  of your model by penalizing for complexity
+It means addition of a small parameter(term) to the existing loss function : loss + x (term)
+

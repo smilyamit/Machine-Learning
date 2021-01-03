@@ -1,5 +1,8 @@
 #0 tf 1.x installation guide for windows/mac
-Before creating any virtual env, first create folder and then create conda virtual env using below command. Though that virtual env will be available from any
+-Before creating any virtual env, first create folder and then create conda virtual env using below command. Though that virtual env will be available outside
+the folder. just to remember where it is created. create venv inside in any folder (eg: amittiwari/ml/first_venv)
+-before creatinf first check what venv are available (so that u can decide whether new one is needed or not, delete older one)
+- to check venv (conda info --env)
 
 conda create -n tf_1 python=3.5 (to create virtual env)
 conda activate tf_1                     (activate virtual env)

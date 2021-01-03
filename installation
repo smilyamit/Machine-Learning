@@ -1,0 +1,65 @@
+#0 tf 1.x installation guide for windows/mac
+conda create -n tf_1 python=3.5 (to create virtual env)
+conda activate tf_1                     (activate virtual env)
+pip install -U pip               (to upgrade pip)
+conda install pandas matplotlib jupyter notebook scipy scikit-learn (to install small library)
+conda install -c conda-forge keras  (to install all tf, keras, theano and others)
+
+#To deactivate created env
+$ conda deactivate
+
+
+# to check the available env
+$ conda info --env
+
+
+*** Below installion guid is for tf 2.x
+#1
+To check the default environment location in mac: /opt/anaconda3/envs/tf. (make sure u r in default position in terminal)
+
+#2 (for OS X or Linux)
+Run the following commands to setup your environment:
+
+conda create -n tensorflow python=3.5
+source activate tensorflow
+conda install pandas matplotlib jupyter notebook scipy scikit-learn
+pip install tensorflow   (if we give without any vers than it will install latest version)
+
+AND
+Windows
+
+And installing on Windows. In your console or Anaconda shell,
+
+conda create -n tensorflow python=3.5
+activate tensorflow
+conda install pandas matplotlib jupyter notebook scipy scikit-learn
+pip install tensorflow
+
+#3 To deactivate created env
+$ conda deactivate
+
+* to again open
+$ conda activate <name of env>  eg $ conda activate tf
+
+** to know which are the environment created locally
+$ conda info --envs
+
+** to remove created env
+conda env remove -n <ENV_NAME>
+
+#After going to new env (eg $ conda activate tf1.14)
+pip install tensorflow==1.14 keras
+conda install pandas matplotlib jupyter notebook scipy scikit-learn
+conda install spyder
+* to check verson of any library eg 
+1) import tensorflow as tf
+   tf.__version__
+2) tf.VERSION
+
+
+
+#4 in Jupyter notebook
+a) after . just use tab to see options available
+b) in braces just use shift + tab to see signature of functions
+c) in case of from ... import ... just put cursor in front but back of import and hit tab
+eg from keras.datasets import reuters  ,here put cursor infront of reuters and hit tab to get others options

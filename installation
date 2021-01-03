@@ -4,7 +4,10 @@ the folder. just to remember where it is created. create venv inside in any fold
 -before creatinf first check what venv are available (so that u can decide whether new one is needed or not, delete older one)
 - to check venv (conda info --env)
 
-conda create -n tf_1 python=3.5 (to create virtual env)
+conda create -n tf_1 python=3.7.4 (to create virtual env)
+-to check installed files/package
+conda list
+
 conda activate tf_1                     (activate virtual env)
 pip install -U pip               (to upgrade pip)
 conda install pandas matplotlib jupyter notebook scipy scikit-learn (to install small library)

@@ -1,0 +1,204 @@
+some imp links:
+https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html
+#imp
+-to save file executed in jupyter:eg  <dataname>.to_csv('path ..where to save/<fname>.csv') 
+eg df5.to_csv('path/first.csv'), df5.to_excel('path/first.xlsx', index=False), index is False so that new index will not 
+  form
+
+-numpy performs in ndarray and pandas have 2 data types (series, dataframe) & perofm in series for 1 row/col & dataframe for
+all
+- use tab after half of your syntax if u want ot complete it.eg sheet...? shhet+tab gives sheet_name =
+-shift + enter to run , alt + enter to run and insert extra cell to jupyter nb
+- shift+tab to see signature(format) of any method or functions in juypter nb
+
+
+
+##1
+In pandas always type the full path for no confusion
+-In windows use r'full path...'
+-in mac just type pwd to print working directory and look for file location and just copy that pwd result and adjust accordingly
+
+##2 for tab sepaarated file
+- use pd.read_csv and 'full path...', sep = '\t'
+- use pd.read_table  and 'full path' 
+We can use anything pd.read_csv or pd.read_table just see the data inside that file and use sep = ', or \t' accordingly
+
+
+##3
+- new column can be added by keyword name. eg name = ['abc', 'efgh', 'opl']
+-index_col = ['key1','key2'] to make important index for column
+- to eliminate unnecessary rows eg skiprows=[0,1]
+- to make nan values to any value inside dataframe use na_values= ['three', 11.0])
+
+##4
+to scrap url (only tables from website using pandas default method pd.read_html
+eg url1 = "http://www.basketball-reference.com/leagues/NBA_2015_totals.html"
+d1 = pd.read_html(url1)
+d1[0]  # to print 1st tabular data in tabular format, simly d1[1] print second table, d[3] print3rd table but if only 1 table
+         don't give d1[1or 2...]
+d1[0].iloc[:, 0:10]     # Check all rows (10 columns only)
+d1[0].iloc[:, 0:10].head(5)     # Check 5 rows (10 columns only)
+
+
+##5
+-to convert list of datas into dataframe : df = pd.DataFrame(<name of list>)
+- if only one column or row is extracted from dataframe it's dtypes is 'series' is equivalent to list in normal python
+
+##6
+nrows = 12 only gives 12 row out of lots of rows
+-to save file without header , index in csv, excel, table format 
+eg df5.to_excel('/Users/koro/Desktop/Ml Practise /DL/Pandas/examples/first2.xlsx', index=None, header=None)
+
+#7
+to save data with custom column head
+eg df5.to_excel('/Users/koro/Desktop/Ml Practise /DL/Pandas/examples/first2.xlsx', index=None, header=['abc', 'def','sss'])
+
+#8
+for very large dataset use special form of pandas library called as modin pandas
+Modin is a DataFrame designed for datasets from 1MB to 1TB+
+
+#9
+to split alphbet with number 
+df.apply(regex=True)
+
+#10
+- index_col=3 implies 4th column will be used as 1st index column
+- in python while calling any method we have to use braces like () eg .pop() except dtypes where we only do .dtypes
+
+
+#11
+to print dates in sequence => pd.date_range
+eg dates = pd.date_range('1/1/2000', periods=7)
+
+#12
+4 method to open the files
+1. df = pd.read_csv
+2. f= open('path/file.csv'), reader= csv.reader(f), reader, for line in reader print(line)
+3. with open('path/file.csv') as f:
+      lines = list(csv.reader(f))
+      print(lines)
+ 4 %%writefile test.txt
+  my name is  bla bla...... (new file will be created in working directory)
+
+# json- javascript object notation
+
+#13
+-df.describe() only gives decription of int and float dataset (no categorical)
+-df.describe() not counts to nan values (but it counts all int or float values of each row
+-df.describe() shows mmean, sd, max, min of datsets
+
+-new_survived = pd.Categorical(titanic_train['Survived']) & learn method for renaming: .rename_categories
+-loc means location (start index 1), iloc means internal ocation (starting index 0)
+
+#14 pandas vs numpy
+-pandas is used for file manipulation eg(row, col manipulation) in short structuring the datasets, similar to list there is series 
+ whereas numpy is used for array n matrix manipulation, mathematiclal operation (eg algebra,proba) done through numpy
+
+#15
+Spark Distribution for large file processing, pandas is good for small file  upto 1 gb
+
+#delete vs drop
+- del can only delete column
+-drop can able to delete both row and column using  axis = 0 (for row, default) or axis= 1(column)
+-eg while removing ouliers we use drop command
+
+#16
+-zip is used to make tuple out of two passed list of items 
+eg list1 = [1,2,3], list2 = ['a','b','c','d'], new_list = list((zip(list1, list2))
+
+#17
+-df.set_index is used to set principal row index
+
+#18 mean, median, mode
+-mode returns a list
+-mean, median returns a single no
+
+#19 method of dropping
+-print(df.dropna(axis=0))
+-print(df.dropna(axis=0, thres=2))
+- transpose is only applicable to data frame
+
+#20Joining method
+-merge
+pd.merge(left, right, on=['key1', 'key2'])
+merge1= pd.merge(left,right,how='inner',on='key')
+
+-join
+left.join(right)
+left.join(right, how='outer')
+
+-concatenation
+df1 = pd.concat([df1,df2,df3], axis=0) # for adding by row wise
+df2 = pd.concat([df1,df2,df3], axis=1) # for adding by column wise
+
+
+#21 use of apply fun
+# Define a function
+def testfunc(x):
+    if (x> 500):
+        return (10*np.log10(x))
+    else:
+        return (x/10)
+ df['FuncApplied'] = df['col1'].apply(testfunc)
+print(df)
+
+simly;
+df['col3length']= df['col3'].apply(len)
+print(df)
+
+df['FuncApplied'].apply(lambda x: np.sqrt(x))
+
+
+#22Deletion, sorting, list of column and row names
+-by default sorting happens in ascending order
+-df.sort_values(by='col2') #inplace=False by default
+-df.sort_values(by='FuncApplied',ascending=False) #inplace=False by default
+-df.isnull() same as -df.isna()
+-df.isnull().sum()
+-df.fillna('FILL'). *any value can be given
+
+#to name rows and column headings manuallly
+- for row just put eg df1 = pd.DataFrame(data1, index= ['row0', 'row1', 'row2', 'row3'])
+- for column just put eg df = pd.DataFrame(data1, column= ['col0', 'col1', 'col2', 'col3'])
+
+#23 incase of loading of csv file , u can use of keyword along with header
+eg df = pd.read_csv("filepath/filename.csv", header=None, error_bad_lines=False)
+
+
+#24 to import excel file from web (in middle of link just change blob to raw to get rid of byte error )
+**from discord
+-blob in the link corresponds to the page in github, raw is link for direct file or data
+you get this link when you copy link from download button
+
+import pandas as pd
+df = pd.read_excel('https://github.com/smilyamit/Practise/raw/master/pandas/coalpublic2013.xlsx')
+df.head()
+
+#25to import csv file from web 
+import pandas as pd
+df = pd.read_csv("https://raw.githubusercontent.com/hadley/data-baby-names/master/baby-names.csv")
+df.head()
+
+#26 series vs df
+series is 1 dimensional and is written like a list
+eg colors = pd.series(["red","blue","green"])
+
+dataframe is always 2 dimensional and is written like a dictionary eg pd.DataFrame({'car_brand':cars, 'colors': color})
+
+#27 to count total values of datas
+df['breed'].value_counts(), if there is () => fun or without () it is attribute
+#by daniel
+-loc refers to index of that item, index can be created virtually
+eg s1 = pd.Series(['cat','dog','pandas','bear'], index=[9,3,4,5])
+   s1.loc[5] will give bear
+
+   whereas iloc refer to exact position of item
+   s1.iloc[3] wil give bear
+
+
+
+
+
+
+
+

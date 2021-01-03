@@ -1,5 +1,6 @@
 #0 tf 1.x installation guide for windows/mac
-#
+Before creating any virtual env, first create folder and then create conda virtual env using below command. Though that virtual env will be available from any
+
 conda create -n tf_1 python=3.5 (to create virtual env)
 conda activate tf_1                     (activate virtual env)
 pip install -U pip               (to upgrade pip)

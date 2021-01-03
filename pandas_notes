@@ -195,7 +195,11 @@ eg s1 = pd.Series(['cat','dog','pandas','bear'], index=[9,3,4,5])
    whereas iloc refer to exact position of item
    s1.iloc[3] wil give bear
 
-
+#####################
+2021, Jan4     (By Corey Schafer)
+#1 df  vs series ( series eg: df['emails'] )  
+df =>df is a 2D object (i.e rows and column). It is a collection of series (each column is 1 series)
+series => It is 1D object. It represents one column at a time. but contains all rows for that 1 column
 
 
 

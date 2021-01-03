@@ -1,4 +1,5 @@
 #0 tf 1.x installation guide for windows/mac
+#
 conda create -n tf_1 python=3.5 (to create virtual env)
 conda activate tf_1                     (activate virtual env)
 pip install -U pip               (to upgrade pip)

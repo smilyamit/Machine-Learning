@@ -88,7 +88,7 @@ eg dates = pd.date_range('1/1/2000', periods=7)
 -df.describe() shows mmean, sd, max, min of datsets
 
 -new_survived = pd.Categorical(titanic_train['Survived']) & learn method for renaming: .rename_categories
--loc means location (start index 1), iloc means internal ocation (starting index 0)
+-loc means location (start index 1), iloc means internal location (starting index 0)
 
 #14 pandas vs numpy
 -pandas is used for file manipulation eg(row, col manipulation) in short structuring the datasets, similar to list there is series 
@@ -199,7 +199,21 @@ eg s1 = pd.Series(['cat','dog','pandas','bear'], index=[9,3,4,5])
 2021, Jan4     (By Corey Schafer)
 #1 df  vs series ( series eg: df['emails'] )  
 df =>df is a 2D object (i.e rows and column). It is a collection of series (each column is 1 series)
-series => It is 1D object. It represents one column at a time. but contains all rows for that 1 column
+series => It is 1D object. It represents one column at a time. but contains all rows for that 1 column. similar to list there is series 
+
+#2
+iloc-> start by integer location
+loc-> start by data label
+
++150
+Label vs. Location
+The main distinction between the two methods is:
+
+loc gets rows (and/or columns) with particular labels.
+
+iloc gets rows (and/or columns) at integer locations.
+
+
 
 
 

@@ -71,3 +71,4 @@ a) after . just use tab to see options available
 b) in braces just use shift + tab to see signature of functions
 c) in case of from ... import ... just put cursor in front but back of import and hit tab
 eg from keras.datasets import reuters  ,here put cursor infront of reuters and hit tab to get others options
+###

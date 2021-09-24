@@ -127,7 +127,7 @@ merge1= pd.merge(left,right,how='inner',on='key')
 left.join(right)
 left.join(right, how='outer')
 
--concatenation
+-concatenation, very imp
 df1 = pd.concat([df1,df2,df3], axis=0) # for adding by row wise
 df2 = pd.concat([df1,df2,df3], axis=1) # for adding by column wise
 

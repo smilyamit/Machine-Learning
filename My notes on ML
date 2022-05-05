@@ -2,8 +2,7 @@
 It helps in reducing overfitting and variance  of your model by penalizing for complexity
 It means addition of a small parameter(term) to the existing loss function : loss + x (term)
 - to cope with the problem of overfitting
-##
-
+#
 
 
 
